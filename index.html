@@ -3,7 +3,7 @@
 
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />  
   <title>Gather – Unified Social Media Analyst</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -165,6 +165,11 @@
     form button:hover {
       background: #357ee6;
     }
+
+    /* Esconder formulários */
+    .hidden {
+      display: none;
+    }
   </style>
 </head>
 
@@ -214,11 +219,27 @@
     </div>
   </section>
 
-  <form id="signupForm">
-    <h2 style="margin-bottom: 1rem;">Register your Social Media Accounts</h2>
-    <label for="email">Email</label>
-    <input type="email" id="email" required />
+  <!-- Formulário inicial de registro -->
+  <form id="userForm">
+    <h2 style="margin-bottom: 1rem;">User Registration</h2>
+    <label for="name">Name *</label>
+    <input type="text" id="name" required />
 
+    <label for="emailUser">Email *</label>
+    <input type="email" id="emailUser" required />
+
+    <label for="phone">Phone</label>
+    <input type="tel" id="phone" />
+
+    <label for="company">Company</label>
+    <input type="text" id="company" />
+
+    <button type="submit">Next</button>
+  </form>
+
+  <!-- Formulário das redes sociais, inicialmente escondido -->
+  <form id="signupForm" class="hidden">
+    <h2 style="margin-bottom: 1rem;">Register your Social Media Accounts</h2>
     <label for="instagram">Instagram</label>
     <input type="text" id="instagram" placeholder="@yourhandle" />
 
@@ -240,7 +261,6 @@
     <button type="submit">Submit</button>
   </form>
 
-  <!-- Supabase JS client -->
   <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
   <script>
     const supabaseUrl = "https://uzcerwybzbdbxjuyccun.supabase.co";
@@ -249,28 +269,66 @@
 
     const supabase = supabase.createClient(supabaseUrl, supabaseKey);
 
-    document.getElementById("signupForm").addEventListener("submit", async function (e) {
+    const userForm = document.getElementById("userForm");
+    const signupForm = document.getElementById("signupForm");
+
+    let userId = null; // Para armazenar o id do usuário criado
+
+    // Submit do formulário inicial (registro do usuário)
+    userForm.addEventListener("submit", async (e) => {
       e.preventDefault();
 
-      const payload = {
-        email: document.getElementById("email").value,
-        instagram: document.getElementById("instagram").value,
-        linkedin: document.getElementById("linkedin").value,
-        twitter: document.getElementById("twitter").value,
-        threads: document.getElementById("threads").value,
-        tiktok: document.getElementById("tiktok").value,
-        facebook: document.getElementById("facebook").value,
+      const userData = {
+        name: document.getElementById("name").value.trim(),
+        email: document.getElementById("emailUser").value.trim(),
+        phone: document.getElementById("phone").value.trim(),
+        company: document.getElementById("company").value.trim(),
       };
 
-      const { data, error } = await supabase.from("socials").insert([payload]);
+      const { data, error } = await supabase.from("users").insert([userData]).select();
 
       if (error) {
-        alert("Submission failed.");
+        alert("Failed to register user: " + error.message);
         console.error(error);
-      } else {
-        alert("Submitted successfully!");
-        e.target.reset();
+        return;
       }
+
+      userId = data[0].id;
+
+      // Esconder formulário inicial e mostrar formulário de redes sociais
+      userForm.classList.add("hidden");
+      signupForm.classList.remove("hidden");
+    });
+
+    // Submit do formulário de redes sociais
+    signupForm.addEventListener("submit", async (e) => {
+      e.preventDefault();
+
+      if (!userId) {
+        alert("User not registered yet.");
+        return;
+      }
+
+      const socialsData = {
+        user_id: userId,
+        instagram: document.getElementById("instagram").value.trim(),
+        linkedin: document.getElementById("linkedin").value.trim(),
+        twitter: document.getElementById("twitter").value.trim(),
+        threads: document.getElementById("threads").value.trim(),
+        tiktok: document.getElementById("tiktok").value.trim(),
+        facebook: document.getElementById("facebook").value.trim(),
+      };
+
+      const { error } = await supabase.from("socials").insert([socialsData]);
+
+      if (error) {
+        alert("Submission failed: " + error.message);
+        console.error(error);
+        return;
+      }
+
+      alert("Submitted successfully!");
+      signupForm.reset();
     });
   </script>
 </body>
