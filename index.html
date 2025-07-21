@@ -8,6 +8,29 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-M1MXYJ9TZ6"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'G-M1MXYJ9TZ6');
+  </script>
+  <script>
+    !function (f, b, e, v, n, t, s) {
+      if (f.fbq) return; n = f.fbq = function () {
+        n.callMethod ?
+          n.callMethod.apply(n, arguments) : n.queue.push(arguments)
+      };
+      if (!f._fbq) f._fbq = n;
+      n.push = n; n.loaded = !0; n.version = '2.0';
+      n.queue = []; t = b.createElement(e); t.async = !0;
+      t.src = v; s = b.getElementsByTagName(e)[0];
+      s.parentNode.insertBefore(t, s)
+    }(window, document, 'script',
+      'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '123456789012345');
+    fbq('track', 'PageView');
+  </script>
   <style>
     * {
       margin: 0;
@@ -26,31 +49,46 @@
       display: flex;
       flex-direction: column;
       align-items: center;
-      padding: 2rem 1rem;
+      padding: 2rem 1rem 1rem;
     }
 
     .logo {
-      width: 250px;
-      height: 250px;
+      width: 220px;
+      height: 220px;
       background: url("Logo.PNG") no-repeat center center/contain;
       border-radius: 50%;
-      box-shadow: 0 0 20px rgba(255, 255, 255, 0.5), inset 0 0 20px rgba(0, 0, 0, 0.1);
+      box-shadow: 0 0 30px rgba(255, 255, 255, 0.4), inset 0 0 30px rgba(0, 0, 0, 0.1);
       backdrop-filter: blur(10px);
-      border: 1px solid rgba(255, 255, 255, 0.2);
+      border: 2px solid rgba(255, 255, 255, 0.2);
       margin-bottom: 1rem;
+      animation: shimmer 6s infinite ease-in-out;
+    }
+
+    @keyframes shimmer {
+      0% {
+        filter: brightness(1);
+      }
+      50% {
+        filter: brightness(1.1);
+      }
+      100% {
+        filter: brightness(1);
+      }
     }
 
     h1 {
-      font-size: 2rem;
+      font-size: 2.25rem;
+      font-weight: 600;
       margin-bottom: 0.5rem;
       text-align: center;
     }
 
     p.description {
       text-align: center;
-      max-width: 600px;
+      max-width: 640px;
       font-size: 1rem;
-      margin-bottom: 2rem;
+      margin-bottom: 1.5rem;
+      color: #333;
     }
 
     .features {
@@ -66,8 +104,13 @@
       background: #fff;
       padding: 1rem;
       border-radius: 1rem;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.06);
       text-align: center;
+      transition: transform 0.3s ease-in-out;
+    }
+
+    .feature-box:hover {
+      transform: scale(1.02);
     }
 
     .feature-box img {
@@ -78,11 +121,12 @@
 
     form {
       max-width: 600px;
-      margin: 2rem auto;
-      padding: 1rem;
-      background: #fff;
+      margin: 2rem auto 3rem;
+      padding: 1.5rem;
+      background: rgba(255, 255, 255, 0.8);
+      backdrop-filter: blur(8px);
       border-radius: 1rem;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.05);
     }
 
     form label {
@@ -100,43 +144,20 @@
     }
 
     form button {
-      background: #111;
+      background: #4c8bf5;
       color: #fff;
       padding: 0.75rem 1.5rem;
       border: none;
       border-radius: 0.5rem;
       cursor: pointer;
-      font-weight: bold;
-      transition: background 0.2s;
+      font-weight: 600;
+      transition: background 0.2s ease-in-out;
     }
 
     form button:hover {
-      background: #444;
+      background: #357ee6;
     }
   </style>
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXX"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag() { dataLayer.push(arguments); }
-    gtag('js', new Date());
-    gtag('config', 'G-XXXXXXX');
-  </script>
-  <script>
-    !function (f, b, e, v, n, t, s) {
-      if (f.fbq) return; n = f.fbq = function () {
-        n.callMethod ?
-          n.callMethod.apply(n, arguments) : n.queue.push(arguments)
-      };
-      if (!f._fbq) f._fbq = n;
-      n.push = n; n.loaded = !0; n.version = '2.0';
-      n.queue = []; t = b.createElement(e); t.async = !0;
-      t.src = v; s = b.getElementsByTagName(e)[0];
-      s.parentNode.insertBefore(t, s)
-    }(window, document, 'script',
-      'https://connect.facebook.net/en_US/fbevents.js');
-    fbq('init', '123456789012345');
-    fbq('track', 'PageView');
-  </script>
 </head>
 
 <body>
@@ -206,8 +227,8 @@
   </form>
 
   <script>
-    const supabaseUrl = 'https://YOUR_PROJECT.supabase.co';
-    const supabaseKey = 'YOUR_PUBLIC_ANON_KEY';
+    const supabaseUrl = 'https://uzcerwybzbdbxjuyccun.supabase.co';
+    const supabaseKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InV6Y2Vyd3liemJkYnhqdXljY3VuIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTMxMzc2MjQsImV4cCI6MjA2ODcxMzYyNH0.LWDAsGXj6OF_scrh49SObkvLsXSR9xVfPj_pv5sjDFc';
 
     document.getElementById('signupForm').addEventListener('submit', async function (e) {
       e.preventDefault();
@@ -222,7 +243,7 @@
         facebook: facebook.value
       };
 
-      const { data, error } = await fetch(`${supabaseUrl}/rest/v1/socials`, {
+      const res = await fetch(`${supabaseUrl}/rest/v1/socials`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -230,13 +251,13 @@
           'Authorization': `Bearer ${supabaseKey}`
         },
         body: JSON.stringify(payload)
-      }).then(res => res.json());
+      });
 
-      if (error) {
-        alert('Submission failed.');
-        console.error(error);
-      } else {
+      if (res.ok) {
         alert('Submitted successfully!');
+      } else {
+        alert('Submission failed.');
+        console.error(await res.text());
       }
     });
   </script>
