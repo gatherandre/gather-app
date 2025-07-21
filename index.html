@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Gather – Unified Social Media Analyst transforms the way you monitor, understand, and act on every aspect of your online presence.">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="description" content="Gather – Unified Social Media Analyst: All your insights in one place."/>
   <title>Gather – Unified Social Media Analyst</title>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css">
+  <link rel="icon" href="Logo.png" type="image/png"/>
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
@@ -25,52 +25,214 @@
     fbq('init', 'XXXXXXXXXXXXXXX');
     fbq('track', 'PageView');
   </script>
-  <noscript>
-    <img height="1" width="1" style="display:none"
-         src="https://www.facebook.com/tr?id=XXXXXXXXXXXXXXX&ev=PageView&noscript=1"/>
-  </noscript>
+  <noscript><img height="1" width="1" style="display:none"
+    src="https://www.facebook.com/tr?id=XXXXXXXXXXXXXXX&ev=PageView&noscript=1"/></noscript>
+
+  <style>
+    :root {
+      --primary: #000000;
+      --secondary: #ffffff;
+      --accent: #007aff;
+      --radius: 16px;
+    }
+
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+      background-color: var(--secondary);
+      color: var(--primary);
+      line-height: 1.6;
+    }
+
+    header {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 1rem;
+      background: var(--secondary);
+    }
+
+    header img {
+      height: 72px;
+    }
+
+    nav {
+      display: flex;
+      justify-content: center;
+      gap: 1.5rem;
+      margin: 0.5rem 0 0;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: var(--primary);
+      font-weight: 500;
+    }
+
+    .hero {
+      text-align: center;
+      padding: 2rem 1rem 1rem;
+      background: linear-gradient(to bottom, #f8f8f8, #ffffff);
+    }
+
+    .hero h1 {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+    }
+
+    .hero p {
+      font-size: 1.1rem;
+      max-width: 600px;
+      margin: 0 auto 1.5rem;
+    }
+
+    .hero button {
+      background-color: var(--accent);
+      color: white;
+      border: none;
+      border-radius: var(--radius);
+      padding: 0.8rem 1.6rem;
+      font-size: 1rem;
+      cursor: pointer;
+    }
+
+    .section {
+      padding: 2rem 1rem;
+      max-width: 960px;
+      margin: auto;
+    }
+
+    .section h2 {
+      text-align: center;
+      font-size: 1.8rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .features, .screenshots {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .card {
+      background: #fff;
+      border-radius: var(--radius);
+      padding: 1rem;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.05);
+      text-align: center;
+    }
+
+    .card img {
+      width: 100%;
+      border-radius: var(--radius);
+      margin-bottom: 0.5rem;
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+      max-width: 500px;
+      margin: 0 auto;
+    }
+
+    form input, form button {
+      padding: 0.75rem;
+      font-size: 1rem;
+      border-radius: var(--radius);
+      border: 1px solid #ccc;
+    }
+
+    footer {
+      text-align: center;
+      padding: 1rem;
+      font-size: 0.9rem;
+      background-color: #f4f4f4;
+    }
+  </style>
 </head>
-<body class="bg-white text-gray-900">
-  <div class="min-h-screen flex flex-col items-center justify-center px-4 py-8">
-    <img src="gather-logo.png" alt="Gather Logo" class="w-40 mb-4">
-    <h1 class="text-3xl font-bold mb-2 text-center">Gather – Unified Social Media Analyst</h1>
-    <p class="text-center max-w-xl mb-6">
-      Gather transforms the way you monitor, understand, and act on every aspect of your online presence.
-      Imagine opening an app where every network you care about flows into a single, beautifully designed dashboard.
-      But Gather isn’t just a static display of numbers; it’s a living command center that guides you through insights,
-      recommendations, and actions, all driven by AI and crafted for clarity.
-    </p>
-    <a href="#form" class="bg-blue-600 text-white px-6 py-2 rounded hover:bg-blue-700 transition mb-6">Try it now</a>
-
-    <form id="form" class="w-full max-w-md space-y-4 bg-gray-50 p-6 rounded shadow">
-      <input name="instagram" type="url" placeholder="Instagram URL" class="w-full p-2 border rounded">
-      <input name="linkedin" type="url" placeholder="LinkedIn URL" class="w-full p-2 border rounded">
-      <input name="x" type="url" placeholder="X (Twitter) URL" class="w-full p-2 border rounded">
-      <input name="threads" type="url" placeholder="Threads URL" class="w-full p-2 border rounded">
-      <input name="tiktok" type="url" placeholder="TikTok URL" class="w-full p-2 border rounded">
-      <input name="facebook" type="url" placeholder="Facebook URL" class="w-full p-2 border rounded">
-      <button type="submit" class="w-full bg-blue-600 text-white py-2 rounded hover:bg-blue-700">Submit</button>
+<body>
+  <header>
+    <img src="Logo.png" alt="Gather Logo" />
+  </header>
+  <nav>
+    <a href="#features">Features</a>
+    <a href="#screenshots">Screenshots</a>
+    <a href="#how">How It Works</a>
+  </nav>
+  <section class="hero">
+    <h1>Gather</h1>
+    <p>Gather – Unified Social Media Analyst transforms the way you monitor, understand, and act on every aspect of your online presence. Imagine opening an app where every network you care about flows into a single, beautifully designed dashboard. But Gather isn’t just a static display of numbers; it’s a living command center that guides you through insights, recommendations, and actions, all driven by AI and crafted for clarity.</p>
+    <button onclick="document.getElementById('social-form').scrollIntoView({ behavior: 'smooth' })">Try It Now</button>
+  </section>
+  <section id="features" class="section">
+    <h2>Key Features</h2>
+    <div class="features">
+      <div class="card">
+        <img src="https://placehold.co/400x200?text=Dashboard" alt="Dashboard" />
+        <h3>Unified Dashboard</h3>
+        <p>View analytics from Instagram, TikTok, LinkedIn, and more – in one place.</p>
+      </div>
+      <div class="card">
+        <img src="https://placehold.co/400x200?text=Scheduling" alt="Scheduling" />
+        <h3>Smart Scheduler</h3>
+        <p>Plan your content across platforms with AI-assisted optimization.</p>
+      </div>
+      <div class="card">
+        <img src="https://placehold.co/400x200?text=Trends" alt="Trends" />
+        <h3>Trend Tracking</h3>
+        <p>Stay on top of what's hot with real-time trend reports and alerts.</p>
+      </div>
+    </div>
+  </section>
+  <section id="screenshots" class="section">
+    <h2>Screenshots</h2>
+    <div class="screenshots">
+      <div class="card"><img src="https://placehold.co/400x300?text=Overview" alt="Overview" /></div>
+      <div class="card"><img src="https://placehold.co/400x300?text=Analytics" alt="Analytics" /></div>
+      <div class="card"><img src="https://placehold.co/400x300?text=Calendar" alt="Calendar" /></div>
+    </div>
+  </section>
+  <section id="how" class="section">
+    <h2>Register Your Accounts</h2>
+    <form id="social-form">
+      <input type="url" placeholder="Instagram URL" required />
+      <input type="url" placeholder="LinkedIn URL" required />
+      <input type="url" placeholder="X (Twitter) URL" required />
+      <input type="url" placeholder="Threads URL" required />
+      <input type="url" placeholder="TikTok URL" required />
+      <input type="url" placeholder="Facebook URL" required />
+      <button type="submit">Submit</button>
     </form>
-  </div>
+  </section>
+  <footer>
+    &copy; 2025 Gather. All rights reserved. | Made with ❤️ for creators.
+  </footer>
 
-  <script type="module">
-    import { createClient } from 'https://esm.sh/@supabase/supabase-js@2'
+  <script>
+    document.getElementById('social-form').addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const inputs = e.target.querySelectorAll('input');
+      const payload = {
+        instagram: inputs[0].value,
+        linkedin: inputs[1].value,
+        twitter: inputs[2].value,
+        threads: inputs[3].value,
+        tiktok: inputs[4].value,
+        facebook: inputs[5].value,
+      };
 
-    const supabase = createClient('https://your-project.supabase.co', 'public-anon-key')
-    const form = document.querySelector('#form')
-
-    form.addEventListener('submit', async (e) => {
-      e.preventDefault()
-      const formData = new FormData(form)
-      const data = Object.fromEntries(formData.entries())
-      const { error } = await supabase.from('social_profiles').insert([data])
-      if (error) {
-        alert('Error saving data: ' + error.message)
-      } else {
-        alert('Data saved successfully!')
-        form.reset()
-      }
-    })
+      await fetch('https://your-supabase-url.supabase.co/rest/v1/socials', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'apikey': 'your-api-key',
+          'Authorization': 'Bearer your-api-key'
+        },
+        body: JSON.stringify(payload)
+      });
+      alert('Submitted successfully!');
+    });
   </script>
 </body>
 </html>
