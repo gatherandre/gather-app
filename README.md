@@ -1,2 +1,3 @@
-# gather-app
+# Gather
 Unify your social media.
+Gather – Unified Social Media Analyst transforms the way you monitor, understand, and act on every aspect of your online presence. Imagine opening an app where every network you care about—Instagram, TikTok, Twitter, Facebook, Threads, LinkedIn—flows into a single, beautifully designed dashboard. But Gather isn’t just a static display of numbers; it’s a living command center that guides you through insights, recommendations, and actions, all driven by AI and crafted for clarity.<img width="468" height="111" alt="image" src="https://github.com/user-attachments/assets/d7380785-f540-4b64-b61d-860de69395e7" />
