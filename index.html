@@ -2,120 +2,175 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="description" content="Gather – Unified Social Media Analyst: All your insights in one place."/>
   <title>Gather – Unified Social Media Analyst</title>
-  <link rel="icon" href="Logo.png" />
+  <link rel="icon" href="Logo.png" type="image/png"/>
   <style>
     :root {
-      --font-primary: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
-      --color-primary: #0a84ff;
-      --color-bg: #f9fbfc;
-      --color-text: #1c1c1e;
+      --primary: #000000;
+      --secondary: #ffffff;
+      --accent: #007aff;
+      --radius: 16px;
     }
+
     body {
       margin: 0;
-      font-family: var(--font-primary);
-      background-color: var(--color-bg);
-      color: var(--color-text);
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+      background-color: var(--secondary);
+      color: var(--primary);
+      line-height: 1.6;
     }
+
     header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 2rem;
+      background: var(--secondary);
+      box-shadow: 0 0 10px rgba(0,0,0,0.05);
+    }
+
+    header img {
+      height: 48px;
+    }
+
+    nav a {
+      margin-left: 2rem;
+      text-decoration: none;
+      color: var(--primary);
+      font-weight: 500;
+    }
+
+    .hero {
       text-align: center;
       padding: 4rem 2rem;
-      background: radial-gradient(circle at top, #d0e9ff, #e5f2ff);
+      background: linear-gradient(to bottom, #f8f8f8, #ffffff);
     }
-    header img {
-      height: 80px;
+
+    .hero h1 {
+      font-size: 3rem;
       margin-bottom: 1rem;
     }
-    header h1 {
-      font-size: 2.5rem;
-      margin: 0.5rem 0;
-    }
-    header p {
+
+    .hero p {
       font-size: 1.2rem;
       max-width: 600px;
-      margin: 1rem auto;
+      margin: 0 auto 2rem;
     }
-    section {
+
+    .hero button {
+      background-color: var(--accent);
+      color: white;
+      border: none;
+      border-radius: var(--radius);
+      padding: 1rem 2rem;
+      font-size: 1rem;
+      cursor: pointer;
+    }
+
+    .section {
       padding: 4rem 2rem;
       max-width: 1000px;
-      margin: 0 auto;
+      margin: auto;
     }
-    .features, .how-it-works {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 2rem;
-    }
-    .feature, .step {
-      background: white;
-      border-radius: 1rem;
-      padding: 2rem;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
-    }
-    .feature h3, .step h3 {
-      margin-top: 0;
-    }
-    .screenshots img {
-      width: 100%;
-      max-width: 800px;
-      border-radius: 1rem;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+
+    .section h2 {
+      text-align: center;
+      font-size: 2rem;
       margin-bottom: 2rem;
     }
+
+    .features, .screenshots {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 2rem;
+    }
+
+    .card {
+      background: #fff;
+      border-radius: var(--radius);
+      padding: 2rem;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.05);
+      text-align: center;
+    }
+
+    .card img {
+      width: 100%;
+      border-radius: var(--radius);
+      margin-bottom: 1rem;
+    }
+
     footer {
       text-align: center;
       padding: 2rem;
-      background: #e5f2ff;
-      color: #444;
+      font-size: 0.9rem;
+      background-color: #f4f4f4;
+    }
+
+    @media (max-width: 600px) {
+      .hero h1 { font-size: 2rem; }
+      .hero p { font-size: 1rem; }
     }
   </style>
 </head>
 <body>
+
   <header>
-    <img src="Logo.png" alt="Gather Logo">
-    <h1>Gather</h1>
-    <p>All your social media insights, unified. A sleek analyst for Twitter (X), Instagram, Threads, and TikTok – all in one place.</p>
+    <img src="Logo.png" alt="Gather Logo" />
+    <nav>
+      <a href="#features">Features</a>
+      <a href="#screenshots">Screenshots</a>
+      <a href="#how">How It Works</a>
+    </nav>
   </header>
 
-  <section class="features">
-    <div class="feature">
-      <h3>📊 Unified Analytics</h3>
-      <p>See real-time performance across all platforms with one dashboard.</p>
-    </div>
-    <div class="feature">
-      <h3>🤖 AI Insights</h3>
-      <p>Get smart suggestions, content trends, and follower behavior predictions.</p>
-    </div>
-    <div class="feature">
-      <h3>🔍 Deep Search</h3>
-      <p>Explore and filter data using hashtags, mentions, keywords, or audience.</p>
+  <section class="hero">
+    <h1>Gather</h1>
+    <p>Unify your social media insights, analytics, and performance in one elegant dashboard.</p>
+    <button onclick="alert('Sign-up feature coming soon!')">Get Started</button>
+  </section>
+
+  <section id="features" class="section">
+    <h2>Key Features</h2>
+    <div class="features">
+      <div class="card">
+        <img src="https://placehold.co/400x200?text=Dashboard" alt="Dashboard" />
+        <h3>Unified Dashboard</h3>
+        <p>View analytics from Instagram, TikTok, LinkedIn, and more – in one place.</p>
+      </div>
+      <div class="card">
+        <img src="https://placehold.co/400x200?text=Scheduling" alt="Scheduling" />
+        <h3>Smart Scheduler</h3>
+        <p>Plan your content across platforms with AI-assisted optimization.</p>
+      </div>
+      <div class="card">
+        <img src="https://placehold.co/400x200?text=Trends" alt="Trends" />
+        <h3>Trend Tracking</h3>
+        <p>Stay on top of what's hot with real-time trend reports and alerts.</p>
+      </div>
     </div>
   </section>
 
-  <section class="screenshots">
-    <h2 style="text-align:center">App Previews</h2>
-    <img src="screenshot1.png" alt="Dashboard Screenshot">
-    <img src="screenshot2.png" alt="Insights Screenshot">
+  <section id="screenshots" class="section">
+    <h2>Screenshots</h2>
+    <div class="screenshots">
+      <div class="card"><img src="https://placehold.co/400x300?text=Overview" alt="Overview" /></div>
+      <div class="card"><img src="https://placehold.co/400x300?text=Analytics" alt="Analytics" /></div>
+      <div class="card"><img src="https://placehold.co/400x300?text=Calendar" alt="Calendar" /></div>
+    </div>
   </section>
 
-  <section class="how-it-works">
-    <div class="step">
-      <h3>Step 1: Connect your accounts</h3>
-      <p>Link your social media accounts securely in seconds.</p>
-    </div>
-    <div class="step">
-      <h3>Step 2: Customize your dashboard</h3>
-      <p>Choose metrics, visuals, and reports that matter to you.</p>
-    </div>
-    <div class="step">
-      <h3>Step 3: Analyze & Act</h3>
-      <p>Track, compare and optimize content with actionable AI insights.</p>
-    </div>
+  <section id="how" class="section">
+    <h2>How It Works</h2>
+    <p style="text-align:center; max-width: 600px; margin: auto;">
+      Connect your social media accounts, choose your goals, and let Gather provide insights, trends, and scheduling tools to grow your reach intelligently.
+    </p>
   </section>
 
   <footer>
-    <p>&copy; 2025 Gather – Unified Social Media Analyst. All rights reserved.</p>
-    <p>Built with ❤️ for creators and analysts.</p>
+    &copy; 2025 Gather. All rights reserved. | Made with ❤️ for creators.
   </footer>
+
 </body>
 </html>
