@@ -1,238 +1,245 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en-US">
+
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <meta name="description" content="Gather – Unified Social Media Analyst: All your insights in one place."/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Gather – Unified Social Media Analyst</title>
-  <link rel="icon" href="Logo.png" type="image/png"/>
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-XXXXXXXXXX');
-  </script>
-  <script>
-    !function(f,b,e,v,n,t,s)
-    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-    n.queue=[];t=b.createElement(e);t.async=!0;
-    t.src=v;s=b.getElementsByTagName(e)[0];
-    s.parentNode.insertBefore(t,s)}(window, document,'script',
-    'https://connect.facebook.net/en_US/fbevents.js');
-    fbq('init', 'XXXXXXXXXXXXXXX');
-    fbq('track', 'PageView');
-  </script>
-  <noscript><img height="1" width="1" style="display:none"
-    src="https://www.facebook.com/tr?id=XXXXXXXXXXXXXXX&ev=PageView&noscript=1"/></noscript>
-
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
   <style>
-    :root {
-      --primary: #000000;
-      --secondary: #ffffff;
-      --accent: #007aff;
-      --radius: 16px;
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Inter', sans-serif;
     }
 
     body {
-      margin: 0;
-      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
-      background-color: var(--secondary);
-      color: var(--primary);
+      background: #f9f9f9;
+      color: #111;
       line-height: 1.6;
     }
 
     header {
       display: flex;
-      justify-content: center;
+      flex-direction: column;
       align-items: center;
-      padding: 1rem;
-      background: var(--secondary);
+      padding: 2rem 1rem;
     }
 
-    header img {
-      height: 72px;
-    }
-
-    nav {
-      display: flex;
-      justify-content: center;
-      gap: 1.5rem;
-      margin: 0.5rem 0 0;
-    }
-
-    nav a {
-      text-decoration: none;
-      color: var(--primary);
-      font-weight: 500;
-    }
-
-    .hero {
-      text-align: center;
-      padding: 2rem 1rem 1rem;
-      background: linear-gradient(to bottom, #f8f8f8, #ffffff);
-    }
-
-    .hero h1 {
-      font-size: 2.5rem;
+    .logo {
+      width: 120px;
+      height: 120px;
+      background: url("Logo.png") no-repeat center center/contain;
+      border-radius: 50%;
+      box-shadow: 0 0 20px rgba(255, 255, 255, 0.5), inset 0 0 20px rgba(0, 0, 0, 0.1);
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(255, 255, 255, 0.2);
       margin-bottom: 1rem;
     }
 
-    .hero p {
-      font-size: 1.1rem;
+    h1 {
+      font-size: 2rem;
+      margin-bottom: 0.5rem;
+      text-align: center;
+    }
+
+    p.description {
+      text-align: center;
       max-width: 600px;
-      margin: 0 auto 1.5rem;
-    }
-
-    .hero button {
-      background-color: var(--accent);
-      color: white;
-      border: none;
-      border-radius: var(--radius);
-      padding: 0.8rem 1.6rem;
       font-size: 1rem;
-      cursor: pointer;
+      margin-bottom: 2rem;
     }
 
-    .section {
-      padding: 2rem 1rem;
-      max-width: 960px;
+    .features {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1rem;
+      padding: 0 1rem 2rem;
+      max-width: 1000px;
       margin: auto;
     }
 
-    .section h2 {
-      text-align: center;
-      font-size: 1.8rem;
-      margin-bottom: 1.5rem;
-    }
-
-    .features, .screenshots {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 1.5rem;
-    }
-
-    .card {
+    .feature-box {
       background: #fff;
-      border-radius: var(--radius);
       padding: 1rem;
-      box-shadow: 0 8px 20px rgba(0,0,0,0.05);
+      border-radius: 1rem;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
       text-align: center;
     }
 
-    .card img {
+    .feature-box img {
       width: 100%;
-      border-radius: var(--radius);
+      border-radius: 0.75rem;
       margin-bottom: 0.5rem;
     }
 
     form {
-      display: flex;
-      flex-direction: column;
-      gap: 0.75rem;
-      max-width: 500px;
-      margin: 0 auto;
-    }
-
-    form input, form button {
-      padding: 0.75rem;
-      font-size: 1rem;
-      border-radius: var(--radius);
-      border: 1px solid #ccc;
-    }
-
-    footer {
-      text-align: center;
+      max-width: 600px;
+      margin: 2rem auto;
       padding: 1rem;
-      font-size: 0.9rem;
-      background-color: #f4f4f4;
+      background: #fff;
+      border-radius: 1rem;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    }
+
+    form label {
+      display: block;
+      margin-bottom: 0.25rem;
+      font-weight: 600;
+    }
+
+    form input {
+      width: 100%;
+      padding: 0.5rem;
+      margin-bottom: 1rem;
+      border: 1px solid #ccc;
+      border-radius: 0.5rem;
+    }
+
+    form button {
+      background: #111;
+      color: #fff;
+      padding: 0.75rem 1.5rem;
+      border: none;
+      border-radius: 0.5rem;
+      cursor: pointer;
+      font-weight: bold;
+      transition: background 0.2s;
+    }
+
+    form button:hover {
+      background: #444;
     }
   </style>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXX"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'G-XXXXXXX');
+  </script>
+  <script>
+    !function (f, b, e, v, n, t, s) {
+      if (f.fbq) return; n = f.fbq = function () {
+        n.callMethod ?
+          n.callMethod.apply(n, arguments) : n.queue.push(arguments)
+      };
+      if (!f._fbq) f._fbq = n;
+      n.push = n; n.loaded = !0; n.version = '2.0';
+      n.queue = []; t = b.createElement(e); t.async = !0;
+      t.src = v; s = b.getElementsByTagName(e)[0];
+      s.parentNode.insertBefore(t, s)
+    }(window, document, 'script',
+      'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '123456789012345');
+    fbq('track', 'PageView');
+  </script>
 </head>
+
 <body>
   <header>
-    <img src="Logo.png" alt="Gather Logo" />
+    <div class="logo"></div>
+    <h1>Gather – Unified Social Media Analyst</h1>
+    <p class="description">Gather is your central hub for monitoring, scheduling, and analyzing social media performance across all major platforms — with powerful AI tools and unified analytics.</p>
   </header>
-  <nav>
-    <a href="#features">Features</a>
-    <a href="#screenshots">Screenshots</a>
-    <a href="#how">How It Works</a>
-  </nav>
-  <section class="hero">
-    <h1>Gather</h1>
-    <p>Gather – Unified Social Media Analyst transforms the way you monitor, understand, and act on every aspect of your online presence. Imagine opening an app where every network you care about flows into a single, beautifully designed dashboard. But Gather isn’t just a static display of numbers; it’s a living command center that guides you through insights, recommendations, and actions, all driven by AI and crafted for clarity.</p>
-    <button onclick="document.getElementById('social-form').scrollIntoView({ behavior: 'smooth' })">Try It Now</button>
-  </section>
-  <section id="features" class="section">
-    <h2>Key Features</h2>
-    <div class="features">
-      <div class="card">
-        <img src="https://placehold.co/400x200?text=Dashboard" alt="Dashboard" />
-        <h3>Unified Dashboard</h3>
-        <p>View analytics from Instagram, TikTok, LinkedIn, and more – in one place.</p>
-      </div>
-      <div class="card">
-        <img src="https://placehold.co/400x200?text=Scheduling" alt="Scheduling" />
-        <h3>Smart Scheduler</h3>
-        <p>Plan your content across platforms with AI-assisted optimization.</p>
-      </div>
-      <div class="card">
-        <img src="https://placehold.co/400x200?text=Trends" alt="Trends" />
-        <h3>Trend Tracking</h3>
-        <p>Stay on top of what's hot with real-time trend reports and alerts.</p>
-      </div>
+
+  <section class="features">
+    <div class="feature-box">
+      <img src="https://source.unsplash.com/400x250/?dashboard,interface" alt="Dashboard" />
+      <h3>Dashboard</h3>
+      <p>Unified control center for all platforms in one glance.</p>
+    </div>
+    <div class="feature-box">
+      <img src="https://source.unsplash.com/400x250/?calendar,socialmedia" alt="Scheduling" />
+      <h3>Scheduling</h3>
+      <p>Plan and automate posts with advanced scheduling.</p>
+    </div>
+    <div class="feature-box">
+      <img src="https://source.unsplash.com/400x250/?trending,chart" alt="Trends" />
+      <h3>Trends</h3>
+      <p>Track viral content and platform trends in real-time.</p>
+    </div>
+    <div class="feature-box">
+      <img src="https://source.unsplash.com/400x250/?overview,social" alt="Overview" />
+      <h3>Overview</h3>
+      <p>Summary of your entire social presence, performance and growth.</p>
+    </div>
+    <div class="feature-box">
+      <img src="https://source.unsplash.com/400x250/?analytics,data" alt="Analytics" />
+      <h3>Analytics</h3>
+      <p>Engagement, impressions and demographics across all channels.</p>
+    </div>
+    <div class="feature-box">
+      <img src="https://source.unsplash.com/400x250/?calendar,schedule" alt="Calendar" />
+      <h3>Calendar</h3>
+      <p>Visualize and edit scheduled content in your unified calendar.</p>
     </div>
   </section>
-  <section id="screenshots" class="section">
-    <h2>Screenshots</h2>
-    <div class="screenshots">
-      <div class="card"><img src="https://placehold.co/400x300?text=Overview" alt="Overview" /></div>
-      <div class="card"><img src="https://placehold.co/400x300?text=Analytics" alt="Analytics" /></div>
-      <div class="card"><img src="https://placehold.co/400x300?text=Calendar" alt="Calendar" /></div>
-    </div>
-  </section>
-  <section id="how" class="section">
-    <h2>Register Your Accounts</h2>
-    <form id="social-form">
-      <input type="url" placeholder="Instagram URL" required />
-      <input type="url" placeholder="LinkedIn URL" required />
-      <input type="url" placeholder="X (Twitter) URL" required />
-      <input type="url" placeholder="Threads URL" required />
-      <input type="url" placeholder="TikTok URL" required />
-      <input type="url" placeholder="Facebook URL" required />
-      <button type="submit">Submit</button>
-    </form>
-  </section>
-  <footer>
-    &copy; 2025 Gather. All rights reserved. | Made with ❤️ for creators.
-  </footer>
+
+  <form id="signupForm">
+    <h2 style="margin-bottom: 1rem;">Register your Social Media Accounts</h2>
+    <label for="email">Email</label>
+    <input type="email" id="email" required />
+
+    <label for="instagram">Instagram</label>
+    <input type="text" id="instagram" placeholder="@yourhandle" />
+
+    <label for="linkedin">LinkedIn</label>
+    <input type="text" id="linkedin" />
+
+    <label for="twitter">X / Twitter</label>
+    <input type="text" id="twitter" />
+
+    <label for="threads">Threads</label>
+    <input type="text" id="threads" />
+
+    <label for="tiktok">TikTok</label>
+    <input type="text" id="tiktok" />
+
+    <label for="facebook">Facebook</label>
+    <input type="text" id="facebook" />
+
+    <button type="submit">Submit</button>
+  </form>
 
   <script>
-    document.getElementById('social-form').addEventListener('submit', async (e) => {
+    const supabaseUrl = 'https://YOUR_PROJECT.supabase.co';
+    const supabaseKey = 'YOUR_PUBLIC_ANON_KEY';
+
+    document.getElementById('signupForm').addEventListener('submit', async function (e) {
       e.preventDefault();
-      const inputs = e.target.querySelectorAll('input');
+
       const payload = {
-        instagram: inputs[0].value,
-        linkedin: inputs[1].value,
-        twitter: inputs[2].value,
-        threads: inputs[3].value,
-        tiktok: inputs[4].value,
-        facebook: inputs[5].value,
+        email: email.value,
+        instagram: instagram.value,
+        linkedin: linkedin.value,
+        twitter: twitter.value,
+        threads: threads.value,
+        tiktok: tiktok.value,
+        facebook: facebook.value
       };
 
-      await fetch('https://your-supabase-url.supabase.co/rest/v1/socials', {
+      const { data, error } = await fetch(`${supabaseUrl}/rest/v1/socials`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
-          'apikey': 'your-api-key',
-          'Authorization': 'Bearer your-api-key'
+          'apikey': supabaseKey,
+          'Authorization': `Bearer ${supabaseKey}`
         },
         body: JSON.stringify(payload)
-      });
-      alert('Submitted successfully!');
+      }).then(res => res.json());
+
+      if (error) {
+        alert('Submission failed.');
+        console.error(error);
+      } else {
+        alert('Submitted successfully!');
+      }
     });
   </script>
 </body>
+
 </html>
