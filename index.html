@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Gather – Unified Social Media Analyst</title>
+    <style>
+      body {
+        font-family: sans-serif;
+        margin: 0;
+        background: #f9fafb;
+        color: #111;
+      }
+      header {
+        background: #000;
+        color: #fff;
+        padding: 2rem;
+        text-align: center;
+      }
+      h1 {
+        font-size: 2.5rem;
+        margin: 0;
+      }
+      .features {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+        gap: 1rem;
+        padding: 2rem;
+      }
+      .card {
+        background: white;
+        border-radius: 12px;
+        padding: 1rem;
+        box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+        transition: all 0.2s;
+      }
+      .card:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+      }
+      .card h2 {
+        font-size: 1.25rem;
+        margin-bottom: 0.5rem;
+      }
+      .footer {
+        text-align: center;
+        padding: 2rem;
+        font-size: 0.9rem;
+        color: #666;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="root"></div>
+
+    <!-- React & ReactDOM -->
+    <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
+
+    <!-- Babel (for JSX in browser) -->
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+    <script type="text/babel">
+      const { useState, useEffect } = React;
+
+      function FeatureCard({ title }) {
+        return (
+          <div className="card">
+            <h2>{title}</h2>
+            <p>Data visual, chart, or metric goes here.</p>
+            <p style={{ fontSize: "0.85rem", color: "#888" }}>
+              [Mocked until API is connected]
+            </p>
+          </div>
+        );
+      }
+
+      function App() {
+        const features = [
+          "Engagement Heatmap",
+          "Conversion Funnel",
+          "Viral Growth Chart",
+          "Audience Demographics",
+          "Follower Retention",
+          "Reach vs. Impressions",
+          "Trending Hashtags",
+          "Platform Comparison",
+          "Optimal Posting Time",
+          "Sentiment Analysis",
+          "Post Performance",
+          "Story Completion Rate",
+          "Account Growth",
+          "Mentions Tracker",
+          "Influencer Impact",
+          "Top Performing Posts",
+          "Paid vs Organic Reach",
+          "Bounce Rate",
+          "Time on Profile",
+          "Geo Insights",
+          "Link Click-Through Rate",
+          "Referral Sources",
+          "Engagement by Format",
+          "Device Usage",
+          "Live Post Tracker",
+          "Content Type Performance",
+          "Media Engagement",
+          "Audience Behavior",
+          "Weekly Summary",
+          "Monthly Report",
+          "Custom Analytics",
+          "Goal Tracker",
+        ];
+
+        return (
+          <>
+            <header>
+              <h1>Gather – Unified Social Media Analyst</h1>
+              <p>All your social media metrics in one elegant dashboard.</p>
+            </header>
+            <main className="features">
+              {features.map((title, index) => (
+                <FeatureCard key={index} title={title} />
+              ))}
+            </main>
+            <div className="footer">© 2025 Gather by Andre Gimaranz</div>
+          </>
+        );
+      }
+
+      const root = ReactDOM.createRoot(document.getElementById('root'));
+      root.render(<App />);
+    </script>
+  </body>
+</html>
