@@ -5,38 +5,44 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Gather – Unified Social Media Analyst</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet" />
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-M1MXYJ9TZ6"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
-    function gtag() { dataLayer.push(arguments); }
-    gtag('js', new Date());
-    gtag('config', 'G-M1MXYJ9TZ6');
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+    gtag("js", new Date());
+    gtag("config", "G-M1MXYJ9TZ6");
   </script>
   <script>
-    !function (f, b, e, v, n, t, s) {
-      if (f.fbq) return; n = f.fbq = function () {
-        n.callMethod ?
-          n.callMethod.apply(n, arguments) : n.queue.push(arguments)
+    !(function (f, b, e, v, n, t, s) {
+      if (f.fbq) return;
+      n = f.fbq = function () {
+        n.callMethod ? n.callMethod.apply(n, arguments) : n.queue.push(arguments);
       };
       if (!f._fbq) f._fbq = n;
-      n.push = n; n.loaded = !0; n.version = '2.0';
-      n.queue = []; t = b.createElement(e); t.async = !0;
-      t.src = v; s = b.getElementsByTagName(e)[0];
-      s.parentNode.insertBefore(t, s)
-    }(window, document, 'script',
-      'https://connect.facebook.net/en_US/fbevents.js');
-    fbq('init', '123456789012345');
-    fbq('track', 'PageView');
+      n.push = n;
+      n.loaded = !0;
+      n.version = "2.0";
+      n.queue = [];
+      t = b.createElement(e);
+      t.async = !0;
+      t.src = v;
+      s = b.getElementsByTagName(e)[0];
+      s.parentNode.insertBefore(t, s);
+    })(window, document, "script", "https://connect.facebook.net/en_US/fbevents.js");
+    fbq("init", "123456789012345");
+    fbq("track", "PageView");
   </script>
   <style>
     * {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
-      font-family: 'Inter', sans-serif;
+      font-family: "Inter", sans-serif;
     }
 
     body {
@@ -68,9 +74,11 @@
       0% {
         filter: brightness(1);
       }
+
       50% {
         filter: brightness(1.1);
       }
+
       100% {
         filter: brightness(1);
       }
@@ -164,27 +172,33 @@
   <header>
     <div class="logo"></div>
     <h1>Gather – Unified Social Media Analyst</h1>
-    <p class="description">Gather – Unified Social Media Analyst transforms the way you monitor, understand, and act on every aspect of your online presence. Imagine opening an app where every network you care about—Instagram, TikTok, Twitter, Facebook, Threads, LinkedIn—flows into a single, beautifully designed dashboard. But Gather isn’t just a static display of numbers; it’s a living command center that guides you through insights, recommendations, and actions, all driven by AI and crafted for clarity.</p>
+    <p class="description">
+      Gather – Unified Social Media Analyst transforms the way you monitor, understand, and act on every aspect of your
+      online presence. Imagine opening an app where every network you care about—Instagram, TikTok, Twitter, Facebook,
+      Threads, LinkedIn—flows into a single, beautifully designed dashboard. But Gather isn’t just a static display of
+      numbers; it’s a living command center that guides you through insights, recommendations, and actions, all driven by
+      AI and crafted for clarity.
+    </p>
   </header>
 
   <section class="features">
     <div class="feature-box">
-      <img src="screenshot6.png">
+      <img src="screenshot6.png" alt="Dashboard screenshot" />
       <h3>Dashboard</h3>
       <p>Unified control center for all platforms in one glance.</p>
     </div>
     <div class="feature-box">
-      <img src="Calendar.PNG">
+      <img src="Calendar.PNG" alt="Scheduling screenshot" />
       <h3>Scheduling</h3>
       <p>Plan and automate posts with advanced scheduling.</p>
     </div>
     <div class="feature-box">
-      <img src="Trends.PNG">
+      <img src="Trends.PNG" alt="Trends screenshot" />
       <h3>Trends</h3>
       <p>Track viral content and platform trends in real-time.</p>
     </div>
     <div class="feature-box">
-      <img src="Overview .PNG">
+      <img src="Overview .PNG" alt="Overview screenshot" />
       <h3>Overview</h3>
       <p>Summary of your entire social presence, performance and growth.</p>
     </div>
@@ -226,38 +240,36 @@
     <button type="submit">Submit</button>
   </form>
 
+  <!-- Supabase JS client -->
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
   <script>
-    const supabaseUrl = 'https://uzcerwybzbdbxjuyccun.supabase.co';
-    const supabaseKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InV6Y2Vyd3liemJkYnhqdXljY3VuIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTMxMzc2MjQsImV4cCI6MjA2ODcxMzYyNH0.LWDAsGXj6OF_scrh49SObkvLsXSR9xVfPj_pv5sjDFc';
+    const supabaseUrl = "https://uzcerwybzbdbxjuyccun.supabase.co";
+    const supabaseKey =
+      "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InV6Y2Vyd3liemJkYnhqdXljY3VuIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTMxMzc2MjQsImV4cCI6MjA2ODcxMzYyNH0.LWDAsGXj6OF_scrh49SObkvLsXSR9xVfPj_pv5sjDFc";
 
-    document.getElementById('signupForm').addEventListener('submit', async function (e) {
+    const supabase = supabase.createClient(supabaseUrl, supabaseKey);
+
+    document.getElementById("signupForm").addEventListener("submit", async function (e) {
       e.preventDefault();
 
       const payload = {
-        email: email.value,
-        instagram: instagram.value,
-        linkedin: linkedin.value,
-        twitter: twitter.value,
-        threads: threads.value,
-        tiktok: tiktok.value,
-        facebook: facebook.value
+        email: document.getElementById("email").value,
+        instagram: document.getElementById("instagram").value,
+        linkedin: document.getElementById("linkedin").value,
+        twitter: document.getElementById("twitter").value,
+        threads: document.getElementById("threads").value,
+        tiktok: document.getElementById("tiktok").value,
+        facebook: document.getElementById("facebook").value,
       };
 
-      const res = await fetch(`${supabaseUrl}/rest/v1/socials`, {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-          'apikey': supabaseKey,
-          'Authorization': `Bearer ${supabaseKey}`
-        },
-        body: JSON.stringify(payload)
-      });
+      const { data, error } = await supabase.from("socials").insert([payload]);
 
-      if (res.ok) {
-        alert('Submitted successfully!');
+      if (error) {
+        alert("Submission failed.");
+        console.error(error);
       } else {
-        alert('Submission failed.');
-        console.error(await res.text());
+        alert("Submitted successfully!");
+        e.target.reset();
       }
     });
   </script>
