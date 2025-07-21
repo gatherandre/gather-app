@@ -2,126 +2,120 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Gather – Unified Social Media Analyst</title>
+  <link rel="icon" href="Logo.png" />
   <style>
+    :root {
+      --font-primary: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+      --color-primary: #0a84ff;
+      --color-bg: #f9fbfc;
+      --color-text: #1c1c1e;
+    }
     body {
       margin: 0;
-      font-family: 'Helvetica Neue', sans-serif;
-      background: #f2f2f2;
-      color: #333;
+      font-family: var(--font-primary);
+      background-color: var(--color-bg);
+      color: var(--color-text);
     }
-
     header {
-      background: #0f172a;
-      color: white;
-      padding: 2rem;
       text-align: center;
+      padding: 4rem 2rem;
+      background: radial-gradient(circle at top, #d0e9ff, #e5f2ff);
     }
-
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-      gap: 1.5rem;
-      padding: 2rem;
-      max-width: 1200px;
-      margin: auto;
+    header img {
+      height: 80px;
+      margin-bottom: 1rem;
     }
-
-    .feature {
-      background: white;
-      padding: 1.5rem;
-      border-radius: 16px;
-      box-shadow: 0 8px 16px rgba(0,0,0,0.08);
-      transition: transform 0.2s ease;
+    header h1 {
+      font-size: 2.5rem;
+      margin: 0.5rem 0;
     }
-
-    .feature:hover {
-      transform: translateY(-4px);
-    }
-
-    .feature h2 {
+    header p {
       font-size: 1.2rem;
-      margin-bottom: 0.5rem;
-      color: #0f172a;
+      max-width: 600px;
+      margin: 1rem auto;
     }
-
-    .feature p {
-      font-size: 0.9rem;
-      color: #555;
+    section {
+      padding: 4rem 2rem;
+      max-width: 1000px;
+      margin: 0 auto;
     }
-
+    .features, .how-it-works {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2rem;
+    }
+    .feature, .step {
+      background: white;
+      border-radius: 1rem;
+      padding: 2rem;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    }
+    .feature h3, .step h3 {
+      margin-top: 0;
+    }
+    .screenshots img {
+      width: 100%;
+      max-width: 800px;
+      border-radius: 1rem;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      margin-bottom: 2rem;
+    }
     footer {
       text-align: center;
       padding: 2rem;
-      font-size: 0.85rem;
-      color: #999;
+      background: #e5f2ff;
+      color: #444;
     }
   </style>
 </head>
 <body>
   <header>
-    <h1>Gather – Unified Social Media Analyst</h1>
-    <p>30+ analytics features, unified in one dashboard</p>
+    <img src="Logo.png" alt="Gather Logo">
+    <h1>Gather</h1>
+    <p>All your social media insights, unified. A sleek analyst for Twitter (X), Instagram, Threads, and TikTok – all in one place.</p>
   </header>
 
-  <main class="grid" id="featuresContainer">
-    <!-- Features will be injected here -->
-  </main>
+  <section class="features">
+    <div class="feature">
+      <h3>📊 Unified Analytics</h3>
+      <p>See real-time performance across all platforms with one dashboard.</p>
+    </div>
+    <div class="feature">
+      <h3>🤖 AI Insights</h3>
+      <p>Get smart suggestions, content trends, and follower behavior predictions.</p>
+    </div>
+    <div class="feature">
+      <h3>🔍 Deep Search</h3>
+      <p>Explore and filter data using hashtags, mentions, keywords, or audience.</p>
+    </div>
+  </section>
+
+  <section class="screenshots">
+    <h2 style="text-align:center">App Previews</h2>
+    <img src="screenshot1.png" alt="Dashboard Screenshot">
+    <img src="screenshot2.png" alt="Insights Screenshot">
+  </section>
+
+  <section class="how-it-works">
+    <div class="step">
+      <h3>Step 1: Connect your accounts</h3>
+      <p>Link your social media accounts securely in seconds.</p>
+    </div>
+    <div class="step">
+      <h3>Step 2: Customize your dashboard</h3>
+      <p>Choose metrics, visuals, and reports that matter to you.</p>
+    </div>
+    <div class="step">
+      <h3>Step 3: Analyze & Act</h3>
+      <p>Track, compare and optimize content with actionable AI insights.</p>
+    </div>
+  </section>
 
   <footer>
-    &copy; 2025 Gather Analytics. All rights reserved.
+    <p>&copy; 2025 Gather – Unified Social Media Analyst. All rights reserved.</p>
+    <p>Built with ❤️ for creators and analysts.</p>
   </footer>
-
-  <script>
-    const features = [
-      'Trending Hashtags',
-      'Influencer Finder',
-      'Post Scheduler',
-      'Audience Insights',
-      'Engagement Heatmap',
-      'Cross-Network Analyzer',
-      'Post Performance',
-      'Brand Sentiment',
-      'Follower Growth',
-      'Click-Through Tracking',
-      'Comments Sentiment',
-      'Account Benchmarking',
-      'Best Posting Time',
-      'Video Views Comparison',
-      'Hashtag Suggestions',
-      'Demographic Breakdown',
-      'Geo Tag Analysis',
-      'Profile Visit Tracker',
-      'Mentions Monitor',
-      'Viral Score Estimator',
-      'Dark Social Estimator',
-      'AI Summary Generator',
-      'Stories Performance',
-      'Top Engagers',
-      'Lost Followers Tracker',
-      'Emoji Usage Stats',
-      'Profile Health Score',
-      'Fake Followers Detector',
-      'AI Caption Rewriter',
-      'Ad ROI Estimator',
-      'Organic vs Paid Split',
-      'Account Reach Timeline',
-      'Save-to-Like Ratio',
-      'User Journey Path'
-    ];
-
-    const container = document.getElementById('featuresContainer');
-
-    features.forEach((feature, index) => {
-      const div = document.createElement('div');
-      div.className = 'feature';
-      div.innerHTML = `
-        <h2>${feature}</h2>
-        <p>Mock data for <strong>${feature}</strong>. Replace this with real API integration.</p>
-      `;
-      container.appendChild(div);
-    });
-  </script>
 </body>
 </html>
