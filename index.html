@@ -1,176 +1,189 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <meta name="description" content="Gather – Unified Social Media Analyst: All your insights in one place."/>
-  <title>Gather – Unified Social Media Analyst</title>
-  <link rel="icon" href="Logo.png" type="image/png"/>
-  <style>
-    :root {
-      --primary: #000000;
-      --secondary: #ffffff;
-      --accent: #007aff;
-      --radius: 16px;
-    }
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Gather – Unified Social Media Analyst</title>
+    <style>
+      :root {
+        --accent-color: #00aaff;
+        --glass-bg: rgba(255, 255, 255, 0.1);
+        --glass-border: rgba(255, 255, 255, 0.3);
+        --transition: all 0.3s ease;
+      }
 
-    body {
-      margin: 0;
-      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
-      background-color: var(--secondary);
-      color: var(--primary);
-      line-height: 1.6;
-    }
+      body {
+        margin: 0;
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen;
+        background: linear-gradient(135deg, #1f1c2c, #928dab);
+        color: white;
+        overflow-x: hidden;
+      }
 
-    header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 2rem;
-      background: var(--secondary);
-      box-shadow: 0 0 10px rgba(0,0,0,0.05);
-    }
+      .container {
+        max-width: 1200px;
+        margin: auto;
+        padding: 2rem;
+      }
 
-    header img {
-      height: 48px;
-    }
+      .hero {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        padding: 4rem 1rem;
+      }
 
-    nav a {
-      margin-left: 2rem;
-      text-decoration: none;
-      color: var(--primary);
-      font-weight: 500;
-    }
+      .hero-logo {
+        width: 150px;
+        height: auto;
+        margin-bottom: 2rem;
+        border-radius: 50%;
+        background-color: white;
+        padding: 10px;
+        box-shadow: 0 0 20px var(--accent-color);
+      }
 
-    .hero {
-      text-align: center;
-      padding: 4rem 2rem;
-      background: linear-gradient(to bottom, #f8f8f8, #ffffff);
-    }
+      h1 {
+        font-size: 3rem;
+        margin-bottom: 1rem;
+        background: linear-gradient(90deg, #ffffff, var(--accent-color));
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
 
-    .hero h1 {
-      font-size: 3rem;
-      margin-bottom: 1rem;
-    }
+      .cta-button {
+        background: var(--accent-color);
+        border: none;
+        padding: 1rem 2rem;
+        color: black;
+        font-weight: bold;
+        font-size: 1.2rem;
+        border-radius: 999px;
+        cursor: pointer;
+        margin-top: 1.5rem;
+        transition: var(--transition);
+      }
 
-    .hero p {
-      font-size: 1.2rem;
-      max-width: 600px;
-      margin: 0 auto 2rem;
-    }
+      .cta-button:hover {
+        background: white;
+        color: var(--accent-color);
+      }
 
-    .hero button {
-      background-color: var(--accent);
-      color: white;
-      border: none;
-      border-radius: var(--radius);
-      padding: 1rem 2rem;
-      font-size: 1rem;
-      cursor: pointer;
-    }
+      .features {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 2rem;
+        padding: 4rem 0;
+      }
 
-    .section {
-      padding: 4rem 2rem;
-      max-width: 1000px;
-      margin: auto;
-    }
+      .feature-card {
+        background: var(--glass-bg);
+        border: 1px solid var(--glass-border);
+        border-radius: 1rem;
+        padding: 2rem;
+        text-align: center;
+        backdrop-filter: blur(20px);
+        transition: var(--transition);
+      }
 
-    .section h2 {
-      text-align: center;
-      font-size: 2rem;
-      margin-bottom: 2rem;
-    }
+      .feature-card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 0 20px var(--accent-color);
+      }
 
-    .features, .screenshots {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 2rem;
-    }
+      video {
+        width: 100%;
+        border-radius: 1rem;
+        margin: 2rem 0;
+      }
 
-    .card {
-      background: #fff;
-      border-radius: var(--radius);
-      padding: 2rem;
-      box-shadow: 0 8px 20px rgba(0,0,0,0.05);
-      text-align: center;
-    }
+      form {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+        max-width: 400px;
+        margin: auto;
+        padding: 2rem;
+        background: var(--glass-bg);
+        border: 1px solid var(--glass-border);
+        border-radius: 1rem;
+        backdrop-filter: blur(15px);
+      }
 
-    .card img {
-      width: 100%;
-      border-radius: var(--radius);
-      margin-bottom: 1rem;
-    }
+      input {
+        padding: 0.8rem;
+        border-radius: 999px;
+        border: 1px solid #ccc;
+      }
 
-    footer {
-      text-align: center;
-      padding: 2rem;
-      font-size: 0.9rem;
-      background-color: #f4f4f4;
-    }
+      footer {
+        text-align: center;
+        padding: 2rem;
+        font-size: 0.9rem;
+        background: #1f1c2c;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <section class="hero">
+        <img src="Logo.png" alt="Gather Logo" class="hero-logo" />
+        <h1 data-lang="en">Gather – Unified Social Media Analyst</h1>
+        <p data-lang="en">
+          All your social media analytics in one place. Real-time tracking,
+          unified insights, and intuitive dashboards.
+        </p>
+        <button class="cta-button" onclick="document.getElementById('signup').scrollIntoView({behavior: 'smooth'})">Try Now</button>
+      </section>
 
-    @media (max-width: 600px) {
-      .hero h1 { font-size: 2rem; }
-      .hero p { font-size: 1rem; }
-    }
-  </style>
-</head>
-<body>
+      <video autoplay muted loop>
+        <source src="https://www.apple.com/105/media/us/iphone-15-pro/2023/5cf9575b-90bf-4092-8f99-4041e1c79c89/anim/hero/large_2x.mp4" type="video/mp4" />
+        Your browser does not support the video tag.
+      </video>
 
-  <header>
-    <img src="Logo.png" alt="Gather Logo" />
-    <nav>
-      <a href="#features">Features</a>
-      <a href="#screenshots">Screenshots</a>
-      <a href="#how">How It Works</a>
-    </nav>
-  </header>
+      <section class="features">
+        <div class="feature-card">Multi-platform dashboard</div>
+        <div class="feature-card">AI-driven recommendations</div>
+        <div class="feature-card">Unified inbox & mentions</div>
+        <div class="feature-card">Real-time engagement insights</div>
+        <div class="feature-card">Scheduled posting</div>
+        <div class="feature-card">Custom alerts</div>
+      </section>
 
-  <section class="hero">
-    <h1>Gather</h1>
-    <p>Unify your social media insights, analytics, and performance in one elegant dashboard.</p>
-    <button onclick="alert('Sign-up feature coming soon!')">Get Started</button>
-  </section>
+      <section id="signup">
+        <form onsubmit="submitForm(event)">
+          <h2 data-lang="en">Register Your Social Media</h2>
+          <input type="text" placeholder="Instagram Handle" required />
+          <input type="text" placeholder="Twitter/X Handle" required />
+          <input type="text" placeholder="LinkedIn Profile" required />
+          <input type="email" placeholder="Email" required />
+          <button class="cta-button" type="submit">Register</button>
+        </form>
+      </section>
 
-  <section id="features" class="section">
-    <h2>Key Features</h2>
-    <div class="features">
-      <div class="card">
-        <img src="https://placehold.co/400x200?text=Dashboard" alt="Dashboard" />
-        <h3>Unified Dashboard</h3>
-        <p>View analytics from Instagram, TikTok, LinkedIn, and more – in one place.</p>
-      </div>
-      <div class="card">
-        <img src="https://placehold.co/400x200?text=Scheduling" alt="Scheduling" />
-        <h3>Smart Scheduler</h3>
-        <p>Plan your content across platforms with AI-assisted optimization.</p>
-      </div>
-      <div class="card">
-        <img src="https://placehold.co/400x200?text=Trends" alt="Trends" />
-        <h3>Trend Tracking</h3>
-        <p>Stay on top of what's hot with real-time trend reports and alerts.</p>
-      </div>
+      <footer>
+        <p data-lang="en">&copy; 2025 Gather. All rights reserved.</p>
+      </footer>
     </div>
-  </section>
 
-  <section id="screenshots" class="section">
-    <h2>Screenshots</h2>
-    <div class="screenshots">
-      <div class="card"><img src="https://placehold.co/400x300?text=Overview" alt="Overview" /></div>
-      <div class="card"><img src="https://placehold.co/400x300?text=Analytics" alt="Analytics" /></div>
-      <div class="card"><img src="https://placehold.co/400x300?text=Calendar" alt="Calendar" /></div>
-    </div>
-  </section>
+    <script>
+      function submitForm(e) {
+        e.preventDefault();
+        alert("Thank you for registering! We'll be in touch soon.");
+      }
 
-  <section id="how" class="section">
-    <h2>How It Works</h2>
-    <p style="text-align:center; max-width: 600px; margin: auto;">
-      Connect your social media accounts, choose your goals, and let Gather provide insights, trends, and scheduling tools to grow your reach intelligently.
-    </p>
-  </section>
-
-  <footer>
-    &copy; 2025 Gather. All rights reserved. | Made with ❤️ for creators.
-  </footer>
-
-</body>
+      const lang = navigator.language;
+      if (lang.startsWith('pt')) {
+        document.querySelectorAll('[data-lang="en"]').forEach(el => {
+          if (el.tagName === 'H1') el.innerText = 'Gather – Analista Unificado de Mídias';
+          if (el.tagName === 'P') el.innerText = 'Todas as suas análises de redes sociais em um só lugar. Monitoramento em tempo real, insights unificados e painéis intuitivos.';
+          if (el.tagName === 'H2') el.innerText = 'Registre Suas Redes Sociais';
+          if (el.tagName === 'FOOTER') el.innerText = '© 2025 Gather. Todos os direitos reservados.';
+        });
+        document.querySelector('.cta-button').innerText = 'Experimentar';
+        document.querySelector('form button').innerText = 'Registrar';
+      }
+    </script>
+  </body>
 </html>
