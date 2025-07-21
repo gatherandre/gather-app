@@ -6,96 +6,122 @@
   <title>Gather – Unified Social Media Analyst</title>
   <style>
     body {
-      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
       margin: 0;
-      padding: 2rem;
-      background: #f9f9f9;
-      color: #111;
+      font-family: 'Helvetica Neue', sans-serif;
+      background: #f2f2f2;
+      color: #333;
     }
+
     header {
+      background: #0f172a;
+      color: white;
+      padding: 2rem;
       text-align: center;
-      padding: 1rem;
     }
+
     .grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 1rem;
-      margin-top: 2rem;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 1.5rem;
+      padding: 2rem;
+      max-width: 1200px;
+      margin: auto;
     }
-    .card {
-      background: #fff;
+
+    .feature {
+      background: white;
+      padding: 1.5rem;
       border-radius: 16px;
-      padding: 1rem;
-      box-shadow: 0 4px 16px rgba(0,0,0,0.05);
+      box-shadow: 0 8px 16px rgba(0,0,0,0.08);
+      transition: transform 0.2s ease;
     }
-    .card h2 {
-      font-size: 1.1rem;
-      margin: 0 0 0.5rem;
+
+    .feature:hover {
+      transform: translateY(-4px);
     }
-    .card p {
+
+    .feature h2 {
+      font-size: 1.2rem;
+      margin-bottom: 0.5rem;
+      color: #0f172a;
+    }
+
+    .feature p {
       font-size: 0.9rem;
-      color: #444;
+      color: #555;
+    }
+
+    footer {
+      text-align: center;
+      padding: 2rem;
+      font-size: 0.85rem;
+      color: #999;
     }
   </style>
 </head>
 <body>
-
   <header>
     <h1>Gather – Unified Social Media Analyst</h1>
-    <p>All features stubbed and ready for integration</p>
+    <p>30+ analytics features, unified in one dashboard</p>
   </header>
 
-  <div class="grid" id="features-container">
-    <!-- Feature cards will be injected here -->
-  </div>
+  <main class="grid" id="featuresContainer">
+    <!-- Features will be injected here -->
+  </main>
+
+  <footer>
+    &copy; 2025 Gather Analytics. All rights reserved.
+  </footer>
 
   <script>
     const features = [
-      "DashboardOverview",
-      "InstagramIntegration",
-      "YouTubeIntegration",
-      "TikTokIntegration",
-      "FacebookIntegration",
-      "LinkedInIntegration",
-      "XIntegration",
-      "EngagementAnalytics",
-      "FollowerGrowth",
-      "TopPosts",
-      "PostScheduler",
-      "HashtagTracker",
-      "CommentSentiment",
-      "UserDemographics",
-      "BestTimeToPost",
-      "ContentIdeas",
-      "AIContentGenerator",
-      "KeywordTrends",
-      "CompetitorInsights",
-      "CrossPlatformPosts",
-      "CustomReports",
-      "ExportCSV",
-      "ThemeSwitcher",
-      "Notifications",
-      "MultiAccountSupport",
-      "TeamManagement",
-      "ActivityLog",
-      "BrandMentions",
-      "InfluencerDiscovery",
-      "AccountHealthScore",
-      "SupportChat",
-      "APISettings",
-      "BillingPortal",
-      "IntegrationsMarketplace"
+      'Trending Hashtags',
+      'Influencer Finder',
+      'Post Scheduler',
+      'Audience Insights',
+      'Engagement Heatmap',
+      'Cross-Network Analyzer',
+      'Post Performance',
+      'Brand Sentiment',
+      'Follower Growth',
+      'Click-Through Tracking',
+      'Comments Sentiment',
+      'Account Benchmarking',
+      'Best Posting Time',
+      'Video Views Comparison',
+      'Hashtag Suggestions',
+      'Demographic Breakdown',
+      'Geo Tag Analysis',
+      'Profile Visit Tracker',
+      'Mentions Monitor',
+      'Viral Score Estimator',
+      'Dark Social Estimator',
+      'AI Summary Generator',
+      'Stories Performance',
+      'Top Engagers',
+      'Lost Followers Tracker',
+      'Emoji Usage Stats',
+      'Profile Health Score',
+      'Fake Followers Detector',
+      'AI Caption Rewriter',
+      'Ad ROI Estimator',
+      'Organic vs Paid Split',
+      'Account Reach Timeline',
+      'Save-to-Like Ratio',
+      'User Journey Path'
     ];
 
-    const container = document.getElementById("features-container");
+    const container = document.getElementById('featuresContainer');
 
-    features.forEach(name => {
-      const card = document.createElement("div");
-      card.className = "card";
-      card.innerHTML = `<h2>${name}</h2><p>${name} component loaded. Replace this with real API logic later.</p>`;
-      container.appendChild(card);
+    features.forEach((feature, index) => {
+      const div = document.createElement('div');
+      div.className = 'feature';
+      div.innerHTML = `
+        <h2>${feature}</h2>
+        <p>Mock data for <strong>${feature}</strong>. Replace this with real API integration.</p>
+      `;
+      container.appendChild(div);
     });
   </script>
-
 </body>
 </html>
